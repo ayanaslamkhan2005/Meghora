@@ -1,3 +1,4 @@
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -70,7 +71,13 @@ button {
 }
 
 .brand h1 {
-  font-size: 19px;
+  font-family: Georgia, serif;
+  font-size: 48px;
+  font-style: italic;
+  font-weight: normal;
+  letter-spacing: -4px;
+  line-height: 0.98;
+  color: var(--accent);
 }
 
 .brand p {
@@ -119,6 +126,29 @@ button {
   position: relative;
 }
 
+.hero-content {
+  min-width: 0;
+  width: 100%;
+}
+
+.hero-title {
+  font-family: Georgia, serif;
+  font-size: clamp(20px, 3.6vw, 48px);
+  font-style: italic;
+  font-weight: normal;
+  letter-spacing: -2px;
+  line-height: 1.15;
+  white-space: nowrap;
+  color: var(--text);
+  margin-top: 0;
+}
+
+.hero-title em {
+  color: var(--accent);
+  font-weight: normal;
+  font-style: italic;
+}
+
 .hero::after {
   content: "";
   position: absolute;
@@ -129,22 +159,7 @@ button {
   border-radius: 50%;
   background: rgba(90,169,255,.09);
   filter: blur(5px);
-}
-
-.eyebrow,
-.section-kicker {
-  display: block;
-  color: var(--accent);
-  font-size: 11px;
-  letter-spacing: .14em;
-  font-weight: 800;
-}
-
-.hero h2 {
-  font-size: clamp(27px, 4vw, 42px);
-  max-width: 780px;
-  line-height: 1.08;
-  margin-top: 9px;
+  pointer-events: none;
 }
 
 .hero p {
@@ -160,6 +175,7 @@ button {
   font-size: 96px;
   color: rgba(90,169,255,.55);
   padding-right: 34px;
+  flex-shrink: 0;
 }
 
 .stats-grid {
@@ -759,9 +775,19 @@ footer {
     padding-left: 16px;
     padding-right: 16px;
   }
+
+  .hero-title {
+    font-size: clamp(23px, 4.2vw, 36px);
+    letter-spacing: -1.5px;
+  }
 }
 
 @media (max-width: 620px) {
+  .brand h1 {
+    font-size: 38px;
+    letter-spacing: -2px;
+  }
+
   .stats-grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -778,8 +804,13 @@ footer {
     padding: 24px;
   }
 
-  .hero h2 {
-    font-size: 28px;
+  .hero-title {
+    font-size: clamp(19px, 4.5vw, 28px);
+    letter-spacing: -1px;
+  }
+
+  .hero p {
+    font-size: 13px;
   }
 
   footer {
